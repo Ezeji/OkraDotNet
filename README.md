@@ -1,6 +1,6 @@
 # Okra API wrapper for .Net
 
-This library provides a convenient way to consume the [Okra API](https://docs.okra.ng/) from .Net projects.
+This library provides a convenient way to consume the [Okra.ng API](https://docs.okra.ng/) from .Net projects.
 
 ## How to Install
 1. #### Via Visual Studio IDE
