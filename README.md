@@ -11,7 +11,7 @@ This library provides a convenient way to consume the [Okra API](https://docs.ok
 + Key in **OkraDotNet** and select version _1.0.0_ or higher. 
 + Click on the ***Install*** button and accept the licences to proceed. .
 
-![Install Package](ScreenShots/packageMgrInst.PNG) 
+![Install Package](Docs/package_manager_install.PNG) 
 
 2. #### Via .NET CLI 
 
