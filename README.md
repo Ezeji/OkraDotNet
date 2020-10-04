@@ -20,7 +20,7 @@ This library provides a convenient way to consume the [Okra API](https://docs.ok
 ```powershell 
  dotnet add package OkraDotNET --version 1.0.0
 ```
-> Ensure you have the latest version of the package. Visit [Nuget](https://www.nuget.org/packages/OkraDotNET/) for more info on the latest release of this package. 
+> Ensure you have the latest version of the package. Visit [Nuget](https://www.nuget.org/packages/OkraDotNet/) for more info on the latest release of this package. 
 
 3. #### Via Nuget Package Manger Console 
 
@@ -28,14 +28,14 @@ This library provides a convenient way to consume the [Okra API](https://docs.ok
 ```powershell 
 Install-Package OkraDotNET -Version 1.0.0 
 ```
-> Ensure you have the latest version of the package. Visit [Nuget](https://www.nuget.org/packages/AfricasTalking.NET/) for more info on the latest release of this package
+> Ensure you have the latest version of the package. Visit [Nuget](https://www.nuget.org/packages/OkraDotNet/) for more info on the latest release of this package
 
 # Usage
-The **[OkraApi](https://github.com/adebisi-fa/paystack-dotnet/blob/master/src/main/PayStackApi.cs)** class is an important type in this library .  This can be created as follows:
+The **[OkraApi](https://github.com/abiolakunle/OkraDotNet/blob/master/OkraDotNet/OkraApi.cs)** class is an important type in this library .  This can be created as follows:
 
 + To use this package ensure you include the following `using` statement to your project file: 
 ```csharp 
- using OkraDotNET;
+ using OkraDotNet;
 ```
 
 The package needs to be configured with your Okra.ng **accessToken** which you can get from your dashboard. 
@@ -50,7 +50,7 @@ The package needs to be configured with your Okra.ng **accessToken** which you c
 
 
 ## Auth API
-To access the Auth API, use methods from the **[IAuthApi](https://github.com/adebisi-fa/paystack-dotnet/blob/master/src/main/Apis/Transactions/ITransactionsApi.cs)** interface (available via the **Auth** property of **OkraDotNET**, viz:
+To access the Auth API, use methods from the **[IAuthApi](https://github.com/abiolakunle/OkraDotNet/blob/master/OkraDotNet/Auth/AuthApi.cs)** interface (available via the **Auth** property of **OkraDotNET**, viz:
 ```c#
 
 //Retrieve Auth request
