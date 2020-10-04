@@ -50,7 +50,7 @@ The package needs to be configured with your Okra.ng **accessToken** which you c
 
 
 ## Auth API
-To access the Auth API, use methods from the **[IAuthApi](https://github.com/abiolakunle/OkraDotNet/blob/master/OkraDotNet/Auth/AuthApi.cs)** interface (available via the **Auth** property of **OkraDotNET**, viz:
+To access the Auth API, use methods from the **[IAuthApi](https://github.com/abiolakunle/OkraDotNet/blob/master/OkraDotNet/Auth/AuthApi.cs)** interface (available via the **Auth** property of **OkraDotNet**, viz:
 ```c#
 
 //Retrieve Auth request
