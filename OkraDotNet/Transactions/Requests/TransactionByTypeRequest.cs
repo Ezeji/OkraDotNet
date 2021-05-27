@@ -1,12 +1,11 @@
 ﻿using OkraDotNet.Common.Requests;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
 
 namespace OkraDotNet.Transactions.Requests
 {
     public class TransactionByTypeRequest : PaginatedRequest
     {
+        [Description("See list of transaction type strings in " + nameof(TransactionType) + " class")]
         public string Type { get; set; }
 
         public string Value { get; set; }

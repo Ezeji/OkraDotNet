@@ -1,14 +1,12 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using OkraDotNet.Auth;
-using OkraDotNet.Auth.Responses;
 using OkraDotNet.Balance;
 using OkraDotNet.Common;
 using OkraDotNet.Identity;
 using OkraDotNet.Income;
 using OkraDotNet.Transactions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -23,15 +21,31 @@ namespace OkraDotNet
     {
         private readonly HttpClient _client;
 
+        public string AccessToken { get; }
+
         public OkraApi(string accessToken, bool useSandBox)
         {
+            AccessToken = accessToken;
+
             if (string.IsNullOrWhiteSpace(accessToken))
                 throw new ArgumentException("Okra api token cannot be empty", nameof(accessToken));
 
-            var baseUrl = useSandBox ? "https://api.okra.ng/sandbox/v1/" : "https://api.okra.ng/v1/";
+            var baseUrl = useSandBox ? "https://api.okra.ng/sandbox/v2/" : "https://api.okra.ng/v2/";
 
             _client = CreateClient(baseUrl, accessToken);
+            InitializeProducts();
+        }
 
+        public OkraApi(string accessToken, string baseApiUrl)
+        {
+            AccessToken = accessToken;
+
+            _client = CreateClient(baseApiUrl, accessToken);
+            InitializeProducts();
+        }
+
+        private void InitializeProducts()
+        {
             Auth = new AuthApi(this);
             Balance = new BalanceApi(this);
             Identity = new IdentityApi(this);
@@ -60,15 +74,15 @@ namespace OkraDotNet
             return client;
         }
 
-        public IAuthApi Auth { get; }
+        public IAuthApi Auth { get; private set; }
 
-        public IBalanceApi Balance { get; }
+        public IBalanceApi Balance { get; private set; }
 
-        public IIdentityApi Identity { get; }
+        public IIdentityApi Identity { get; private set; }
 
-        public IIncomeApi Income { get; }
+        public IIncomeApi Income { get; private set; }
 
-        public ITransactionsApi Transactions { get; }
+        public ITransactionsApi Transactions { get; private set; }
 
         internal async Task<TRes> Post<TRes, TReq>(string relativeUrl, TReq request) where TRes : IBaseResponse
         {

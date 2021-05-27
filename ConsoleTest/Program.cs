@@ -6,7 +6,6 @@ using OkraDotNet.Balance;
 using OkraDotNet.Balance.Requests;
 using OkraDotNet.Common.Requests;
 using OkraDotNet.Identity;
-using OkraDotNet.Identity.Requests;
 using OkraDotNet.Income;
 using OkraDotNet.Income.Requests;
 using OkraDotNet.Transactions;
@@ -22,14 +21,14 @@ namespace ConsoleTest
             //replace string value with access token from your dashboard
             var accessToken = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxx";
 
-            var api = new OkraApi(accessToken, true);
+            var api = new OkraApi(Key.AccessToken, true);
 
             //Uncomment any line below to run tests
 
             //AuthTests(api.Auth);
             //BalanceTests(api.Balance);
             //IdentityTests(api.Identity);
-            //TransactionsTests(api.Transactions);
+            TransactionsTests(api.Transactions);
             //IncomeTests(api.Income);
 
             Console.ReadLine();
@@ -101,9 +100,9 @@ namespace ConsoleTest
 
         public static void TransactionsTests(ITransactionsApi api)
         {
-            var retTrans = api.RetrieveTransactionsAsync(new PaginatedRequest { Limit = 20, Page = 1 }).Result;
+            //var retTrans = api.RetrieveTransactionsAsync(new PaginatedRequest { Limit = 20, Page = 1 }).Result;
 
-            var retTransPdf = api.RetrieveTransactionsAsPdfAsync(new PaginatedRequest { Limit = 20, Page = 1 }).Result;
+            //var retTransPdf = api.RetrieveTransactionsAsPdfAsync(new PaginatedRequest { Limit = 20, Page = 1 }).Result;
 
             var transId = api.TransactionByIdAsync(new TransactionByIdRequest { Id = "5f338d9f53957a10097edabe", Limit = 20, Page = 1 }).Result;
 
