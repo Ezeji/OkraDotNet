@@ -21,12 +21,8 @@ namespace OkraDotNet
     {
         private readonly HttpClient _client;
 
-        public string AccessToken { get; }
-
         public OkraApi(string accessToken, bool useSandBox)
         {
-            AccessToken = accessToken;
-
             if (string.IsNullOrWhiteSpace(accessToken))
                 throw new ArgumentException("Okra api token cannot be empty", nameof(accessToken));
 
@@ -38,8 +34,6 @@ namespace OkraDotNet
 
         public OkraApi(string accessToken, string baseApiUrl)
         {
-            AccessToken = accessToken;
-
             _client = CreateClient(baseApiUrl, accessToken);
             InitializeProducts();
         }

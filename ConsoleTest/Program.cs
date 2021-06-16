@@ -9,7 +9,6 @@ using OkraDotNet.Identity;
 using OkraDotNet.Income;
 using OkraDotNet.Income.Requests;
 using OkraDotNet.Transactions;
-using OkraDotNet.Transactions.Requests;
 using System;
 
 namespace ConsoleTest
@@ -102,38 +101,24 @@ namespace ConsoleTest
         {
             //var retTrans = api.RetrieveTransactionsAsync(new PaginatedRequest { Limit = 20, Page = 1 }).Result;
 
-            //var retTransPdf = api.RetrieveTransactionsAsPdfAsync(new PaginatedRequest { Limit = 20, Page = 1 }).Result;
+            //var transId = api.TransactionByIdAsync(new TransactionByIdRequest { Id = "5f338d9f53957a10097edabe", Limit = 20, Page = 1 }).Result;
 
-            var transId = api.TransactionByIdAsync(new TransactionByIdRequest { Id = "5f338d9f53957a10097edabe", Limit = 20, Page = 1 }).Result;
+            //var transBank = api.TransactionByBankAsync(new TransactionByBankRequest { Bank = "5d6fe57a4099cc4b210bbec0", Limit = 20, Page = 1 }).Result;
 
-            var transAcc = api.TransactionByAccountAsync(new TransactionByAccountRequest { Account = "5f338d5f53957a10097edaa6", Limit = 20, Page = 1 }).Result;
+            //var transCus = api.TransactionByCustomerAsync(new TransactionByCustomerRequest { Customer = "5f338d5c53957a10097edaa4", Limit = 20, Page = 1 }).Result;
 
-            var transBank = api.TransactionByBankAsync(new TransactionByBankRequest { Bank = "5d6fe57a4099cc4b210bbec0", Limit = 20, Page = 1 }).Result;
+            //var transCusDate = api.TransactionByCustomerAndDateRangeAsync(new TransactionByCustomerAndDateRangeRequest
+            //{
+            //    From = DateTime.Now.AddDays(-50),
+            //    To = DateTime.Now,
+            //    Customer = "5f338d5c53957a10097edaa4",
+            //    Limit = 20,
+            //    Page = 1
+            //}).Result;
 
-            var transCus = api.TransactionByCustomerAsync(new TransactionByCustomerRequest { Customer = "5f338d5c53957a10097edaa4", Limit = 20, Page = 1 }).Result;
+            //var transDate = api.TransactionByDateRangeAsync(new TransactionByDateRangeRequest { From = DateTime.Now.AddDays(-50), To = DateTime.Now, Limit = 20, Page = 1 }).Result;
 
-            var transCusDate = api.TransactionByCustomerAndDateRangeAsync(
-                new TransactionByCustomerAndDateRangeRequest
-                {
-                    From = DateTime.Now.AddDays(-50),
-                    To = DateTime.Now,
-                    Customer = "5f338d5c53957a10097edaa4",
-                    Limit = 20,
-                    Page = 1
-                }).Result;
-
-            var transDate = api.TransactionByDateRangeAsync(
-                new TransactionByDateRangeRequest { From = DateTime.Now.AddDays(-50), To = DateTime.Now, Limit = 20, Page = 1 }).Result;
-
-            var transSpending = api.TransactionSpendingPatternAsync(new TransactionSpendingPatternRequest { CustomerId = "5f338d5c53957a10097edaa4" }).Result;
-
-            var transOpt = api.TransactionsByOptionsAsync(new TransactionByOptionsRequest { Options = new { FirstName = "CHUKWU", LastName = "OBI" } }).Result;
-
-            var transType = api.TransactionByTypeAsync(new TransactionByTypeRequest { Type = TransactionType.Credit, Value = "200", Limit = 20, Page = 1 }).Result;
-
-            var transPeriod = api.PeriodicTransactionAsync(new PeriodicTransactionRequest { account_id = "5f338d5f53957a10097edaa6", Currency = "NGN", record_id = "5f338d9f53957a10097edabe" }).Result;
-
-            var authCallBack = api.TransactionCallBackAsync("5f536499e287580f4a6f1de7").Result;
+            var debitCredit = api.TotalCreditAndDebit("5f338d5c53957a10097edaa4").Result;
         }
 
         public static void IdentityTests(IIdentityApi api)
