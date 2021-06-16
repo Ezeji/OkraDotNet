@@ -112,7 +112,9 @@ Version 1.1.1 Changes:
  OkraApi(string accessToken, string baseApiUrl) 
  ```
 to 
-```c# OkraApi ```
+```c# 
+OkraApi
+```
 class to set base URL and access token
 - Updated transaction API
 
