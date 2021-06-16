@@ -1,6 +1,7 @@
 # Okra API wrapper for .Net
+<img src="https://files.readme.io/5b62e80-small-circle-logo.png"/>
+This library provides a convenient way to consume the [Okra.ng API](https://docs.okra.ng/) from .Net projects.
 
-This library provides a convenient way to consume the [Okra API](https://docs.okra.ng/) from .Net projects.
 
 ## How to Install
 1. #### Via Visual Studio IDE
@@ -8,17 +9,17 @@ This library provides a convenient way to consume the [Okra API](https://docs.ok
 + On a new project, Navigate to the ***Solution Explorer*** tab within Visual Studio. 
 + Right-click on the ***References*** node and click on the *Manage Nuget Packages* from the resulting context menu. 
 + On the Nuget Package Manager window navigate to the ***Browse*** Tab. 
-+ Key in **OkraDotNet** and select version _1.0.0_ or higher. 
++ Key in **OkraDotNet** and select version _1.1.0_ or higher. 
 + Click on the ***Install*** button and accept the licences to proceed. .
 
-![Install Package](ScreenShots/packageMgrInst.PNG) 
+![Install Package](Docs/package_manager_install.PNG) 
 
 2. #### Via .NET CLI 
 
 + From the _command prompt/powershell window_ opened in your project directory, key in the following and press *Enter*. 
 
 ```powershell 
- dotnet add package OkraDotNet --version 1.0.0
+ dotnet add package OkraDotNet --version 1.1.0
 ```
 > Ensure you have the latest version of the package. Visit [Nuget](https://www.nuget.org/packages/OkraDotNet/) for more info on the latest release of this package. 
 
@@ -26,7 +27,7 @@ This library provides a convenient way to consume the [Okra API](https://docs.ok
 
 + On your Nuget package manager console,key in the following and press *Enter* 
 ```powershell 
-Install-Package OkraDotNet -Version 1.0.0 
+Install-Package OkraDotNet -Version 1.1.0 
 ```
 > Ensure you have the latest version of the package. Visit [Nuget](https://www.nuget.org/packages/OkraDotNet/) for more info on the latest release of this package
 
@@ -50,7 +51,7 @@ The package needs to be configured with your Okra.ng **accessToken** which you c
 
 
 ## Auth API
-To access the Auth API, use methods from the **[IAuthApi](https://github.com/abiolakunle/OkraDotNet/blob/master/OkraDotNet/Auth/AuthApi.cs)** interface (available via the **Auth** property of **OkraDotNET**, viz:
+To access the Auth API, use methods from the **[IAuthApi](https://github.com/abiolakunle/OkraDotNet/blob/master/OkraDotNet/Auth/AuthApi.cs)** interface (available via the **Auth** property of **OkraDotNet**, viz:
 ```c#
 
 //Retrieve Auth request
