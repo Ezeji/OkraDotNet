@@ -19,7 +19,7 @@ This library provides a convenient way to consume the [Okra.ng API](https://docs
 + From the _command prompt/powershell window_ opened in your project directory, key in the following and press *Enter*. 
 
 ```powershell 
- dotnet add package OkraDotNet --version 1.1.0
+ dotnet add package OkraDotNet --version 1.1.1
 ```
 > Ensure you have the latest version of the package. Visit [Nuget](https://www.nuget.org/packages/OkraDotNet/) for more info on the latest release of this package. 
 
@@ -27,7 +27,7 @@ This library provides a convenient way to consume the [Okra.ng API](https://docs
 
 + On your Nuget package manager console,key in the following and press *Enter* 
 ```powershell 
-Install-Package OkraDotNet -Version 1.1.0 
+Install-Package OkraDotNet -Version 1.1.1 
 ```
 > Ensure you have the latest version of the package. Visit [Nuget](https://www.nuget.org/packages/OkraDotNet/) for more info on the latest release of this package
 
