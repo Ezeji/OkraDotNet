@@ -107,7 +107,13 @@ public interface IAuthApi
 
 Version 1.1.1 Changes:
 - Updated base URL to okra.ng V2 API
-- Added new constructor ```c# OkraApi(string accessToken, string baseApiUrl) ``` to  ```c# OkraApi ``` class to set base URL and access token
+- Added new constructor 
+```c#
+ OkraApi(string accessToken, string baseApiUrl) 
+ ```
+to 
+```c# OkraApi ```
+class to set base URL and access token
 - Updated transaction API
 
 
