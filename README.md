@@ -9,7 +9,7 @@ This library provides a convenient way to consume the [Okra.ng API](https://docs
 + On a new project, Navigate to the ***Solution Explorer*** tab within Visual Studio. 
 + Right-click on the ***References*** node and click on the *Manage Nuget Packages* from the resulting context menu. 
 + On the Nuget Package Manager window navigate to the ***Browse*** Tab. 
-+ Key in **OkraDotNet** and select version _1.1.0_ or higher. 
++ Key in **OkraDotNet** and select version _1.1.1_ or higher. 
 + Click on the ***Install*** button and accept the licences to proceed. .
 
 ![Install Package](Docs/package_manager_install.PNG) 
@@ -105,5 +105,9 @@ public interface IAuthApi
 }
 ```
 
+Version 1.1.1 Changes:
+- Updated base URL to okra.ng V2 API
+- Added new constructor ```c# OkraApi(string accessToken, string baseApiUrl) ``` to  ```c# OkraApi ``` class to set base URL and access token
+- Updated transaction API
 
 
